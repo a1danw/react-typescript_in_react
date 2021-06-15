@@ -1,9 +1,13 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Store } from "./Context/Store";
 import { Link } from "@reach/router";
-import "./App.css";
 
 export default function App(props: any): JSX.Element {
+  // useReducer is similiar to useState - takes an initial value and a value to change the state
+  // cont [count, dispatch]
+
+  // const store = useContext(Store);
+  // console.log(store);
   const { state } = useContext(Store);
 
   return (
@@ -15,7 +19,7 @@ export default function App(props: any): JSX.Element {
         </div>
         <div>
           <Link to="/">Home</Link>
-          <Link to="/favourites"> Favourite(s): {state.favourites.length}</Link>
+          <Link to="/faves"> Favourite(s): {state.favourites.length}</Link>
         </div>
       </header>
       {props.children}

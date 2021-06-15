@@ -25,7 +25,8 @@ export default function EpisodeList(props: any): JSX.Element[] {
           type="button"
           onClick={() => toggleFavAction(state, dispatch, episode)}
         >
-          {favourites.find((fav: IEpisode) => fav.id === episode.id)
+          {favourites !== null &&
+          favourites.find((fav: IEpisode) => fav.id === episode.id)
             ? "Unfav"
             : "Fav"}
         </button>
